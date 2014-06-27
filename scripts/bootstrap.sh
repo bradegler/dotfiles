@@ -17,6 +17,18 @@ sudo apt-get install \
     check rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller filezilla \
     filezilla-common gimp gimp-data gimp-data-extras nginx libaio1 openssh-server g++ curl libssl-dev apache2-utils \
     git-core gnome-shell gnome-shell-extensions gdm dos2unix alien network-manager-vpnc tilda htop vagrant libpq-dev \
-    git-svn monit gawk
+    git-svn monit gawk apt-transport-https
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+
+# Install docker
+# sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+# sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+# sudo apt-get update
+# sudo apt-get install lxc-docker
+
+# Add user to docker group so you don't have to sudo anymore
+#sudo groupadd docker
+#sudo gpasswd -a myusername docker
+#sudo service docker restart
