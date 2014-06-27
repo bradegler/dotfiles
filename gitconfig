@@ -1,0 +1,16 @@
+[user]
+	name = Brad Egler
+	email = begler@gmail.com
+[color]
+    ui = auto
+
+[push]
+	default = matching
+[core]
+	editor = vim
+	autoclrf = false
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+
+[apply]
+    whitespace = nowarn

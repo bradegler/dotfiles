@@ -1,0 +1,50 @@
+#!/bin/sh
+
+#################################
+# Simple program name / common args shortening
+#
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ll='ls -lha'
+alias la='ls -A'
+alias l5='ls -lhtra | tail -5'
+alias pp='ps -eLfww'
+alias lessc='less -R' # Lets color escape sequences carry through to less
+alias morec='more -R'
+alias lesscolor='less -R'
+alias morecolor='more -R'
+alias st='/opt/sublime_text/sublime_text'
+alias web='firefox'
+
+#################################
+# Utilities
+
+# Cat the oracle tns file
+alias show.tns='cat $ORACLE_HOME/network/admin/tnsnames.ora'
+alias hexdumpfile='od -h'
+
+# Show network connections
+# Often useful to prefix with SUDO to see more system level network usage
+alias network.connections='lsof -l -i +L -R -V'
+alias network.established='lsof -l -i +L -R -V | grep ESTABLISHED'
+alias network.internalip="ifconfig en0 | egrep -o '([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)'"
+alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+
+# Files used, anywhere on the filesystem
+alias files.usage='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep'
+# Files being opened
+alias files.open='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep open'
+# Files in use in the Users directory
+alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep Users'
+
+#################################
+# Location jumps
+
+alias to.erx='cd /data/erx'
+alias to.tools='cd /data/tools'
+alias to.trunk='cd /data/erx/source/trunk'
+alias to.build='cd /data/erx/build/current'
+

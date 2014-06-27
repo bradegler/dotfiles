@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PATH=".:$PATH"
+PATH="$ORACLE_HOME/bin:$PATH"
+PATH="$JAVA_HOME/bin:$PATH"
+PATH="$ANT_HOME/bin:$PATH"
+PATH="$GRADLE_HOME/bin:$PATH"
+PATH="$GROOVY_HOME/bin:$PATH"
+PATH="$SCALA_HOME/bin:$PATH"
+PATH="$GO_HOME/bin:$PATH"
+PATH="$HOME/.rvm/bin:$PATH"
+PATH="$HOME/.dotfiles/scripts:$PATH"
+
+export PATH

@@ -1,0 +1,9 @@
+# Strips -- style comments lines and blank lines from a file
+sed -e 's/--.*$//' -e '/^[ ]*$/d'
+# Converts SQL stored in a java string to sql that can be pasted into toad / sqlplus
+sed -e 's/^[ \t]*"//g' -e 's/\\n"[ \t].\+//g' -e 's/";//g'
+# Converts raw SQL to java string
+sed -e 's/\"/\\\"/g' -e 's/^/\"/g' -e 's/$/ \\n\" \+/g'
+
+# Wrap a line in "..",
+sed -e 's/(^[ ]*)([A-Z,a-z].*)/\1"\2",/g'
