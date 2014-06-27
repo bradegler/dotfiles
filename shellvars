@@ -3,15 +3,13 @@
 export SVN_EDITOR=vi
 export GDK_NATIVE_WINDOWS=1
 
-prompt_reset="\033[00m"
-prompt_device_color="\033[01;32m"
-prompt_direct_color="\033[1;34m"
-prompt_git_status_color="\033[1;32m" # YELLOW
 
 export PS1="\
 [\[$prompt_device_color\]\h\[$prompt_reset\]][\[$prompt_direct_color\]\w\[$prompt_reset\]]\
 \$( is_on_git && \
-  echo -n \"[\[$prompt_git_status_color\]\$(get_git_info)\" && \
+  echo -n \"[\[$prompt_git_master_color\]\$(get_git_info_master)\" && \
+  echo -n \"\[$prompt_git_branch_color\]\$(get_git_info_branch)\" && \
+  echo -n \"\[$prompt_git_status_color\]\$(get_git_status)\" && \
   echo -n \"\[$prompt_git_progress_color\]\$(get_git_progress)\" && \
   echo -n \"\[$prompt_preposition_color\]]\")\[$prompt_reset\]\
 $ "
