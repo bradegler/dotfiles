@@ -8,8 +8,8 @@ export EDITOR='vi'
 
 ###################
 # Load paths and environment variables
+source ~/.shellactivities
 source ~/.shellvars
 source ~/.shellpaths
 source ~/.shellaliases
-source ~/.shellactivities
 
