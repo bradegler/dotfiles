@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #############################################################
 # Generic configuration that applies to all shells
 #############################################################
@@ -8,6 +10,7 @@ export EDITOR='vi'
 
 ###################
 # Load paths and environment variables
+source ~/.shellcolors
 source ~/.shellactivities
 source ~/.shellvars
 source ~/.shellpaths

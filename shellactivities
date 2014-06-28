@@ -33,16 +33,16 @@ function git-branch-prompt {
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
-prompt_reset="\033[m"
-prompt_user_color="\033[1;34m" # BLUE
-prompt_preposition_color="\033[1;37m" # WHITE
-prompt_device_color="\033[01;32m"
-prompt_direct_color="\033[1;34m"
-prompt_git_status_color="\033[1;33m" # YELLOW
-prompt_git_progress_color="\033[1;31m" # RED
+prompt_reset="\e[m"
+prompt_user_color="\e[1;34m" # BLUE
+prompt_preposition_color="\e[1;37m" # WHITE
+prompt_device_color="\e[01;32m"
+prompt_direct_color="\e[1;34m"
+prompt_git_status_color="\e[1;33m" # YELLOW
+prompt_git_progress_color="\e[1;31m" # RED
 prompt_symbol_color="" # NORMAL
-prompt_git_master_color="\033[0;32m"
-prompt_git_branch_color="\033[1;36m" # CYAN
+prompt_git_master_color="\e[0;32m"
+prompt_git_branch_color="\e[1;36m" # CYAN
 
 function get_git_branch() {
   # On branches, this will return the branch name
@@ -208,5 +208,28 @@ get_git_info_branch () {
     fi
     # Echo our output
     echo "$output"
+  fi
+}
+
+# Check status on all sub directories
+gsub () {
+  for file in `ls`; 
+  do 
+    if [ -d $file ]; then 
+      cd $file; 
+      echo -e '\e[37;44m'"\e[1m$file\e[0m"
+      git status; 
+      cd ..; 
+    fi 
+  done;
+}
+
+gcom () {
+  if [ -z "$1" ]; then
+    echo "Missing commit message"
+  else
+    git add -A .
+    git commit -m"$1"
+    git push
   fi
 }

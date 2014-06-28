@@ -19,6 +19,7 @@ alias morecolor='more -R'
 alias st='/opt/sublime_text/sublime_text'
 alias web='firefox'
 
+
 #################################
 # Utilities
 
@@ -47,6 +48,8 @@ alias to.erx='cd /data/erx'
 alias to.tools='cd /data/tools'
 alias to.trunk='cd /data/erx/source/trunk'
 alias to.build='cd /data/erx/build/current'
+alias to.boss='cd /data/tools/jboss-as-7.1.1.Final'
+alias to.ehm='cd /data/git/sparkea'
 
 #################################
 # docker
@@ -77,3 +80,5 @@ dri() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;}
+
+

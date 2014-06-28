@@ -5,7 +5,7 @@ dot_dir=$HOME/.dotfiles
 
 mkdir -p $bkp_dir
 
-files=("bash_profile" "bashrc" "gitconfig" "profile" "vimrc" "shellvars" "shellpaths" "shellaliases" "shellactivities" "vim")
+files=("bash_profile" "bashrc" "gitconfig" "profile" "vimrc" "shellvars" "shellpaths" "shellaliases" "shellactivities" "vim" "shellcolors")
 
 for file in "${files[@]}"
 do
