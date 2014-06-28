@@ -19,13 +19,24 @@ alias morecolor='more -R'
 alias st='/opt/sublime_text/sublime_text'
 alias web='firefox'
 
+alias _="sudo"
+
+#################################
+# git
+alias g='git'
+# git-svn
+alias gsr='git svn rebase'
+alias gsc='git svn dcommit'
+alias gsi='git svn info'
+
 #################################
 # Utilities
 
 # Cat the oracle tns file
 alias show.tns='cat $ORACLE_HOME/network/admin/tnsnames.ora'
 alias hexdumpfile='od -h'
-
+# Lists the ten most used commands.
+alias history.stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
 alias network.connections='lsof -l -i +L -R -V'
@@ -79,3 +90,20 @@ dri() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;}
+
+#################################
+# Vagrant Aliases
+alias vup="vagrant up"
+alias vh="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
+alias vrl="vagrant reload"
+alias vssh="vagrant ssh"
+alias vst="vagrant status"
+alias vp="vagrant provision"
+alias vdstr="vagrant destroy"
+# requires vagrant-list plugin
+alias vl="vagrant list"
+# requires vagrant-hostmanager plugin
+alias vhst="vagrant hostmanager"
+
