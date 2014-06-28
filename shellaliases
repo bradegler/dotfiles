@@ -19,7 +19,6 @@ alias morecolor='more -R'
 alias st='/opt/sublime_text/sublime_text'
 alias web='firefox'
 
-
 #################################
 # Utilities
 
@@ -80,5 +79,3 @@ dri() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;}
-
-
