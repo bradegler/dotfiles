@@ -78,3 +78,6 @@
 
     # Sync
     sync = plu && pso
+
+    # Pull all submodules
+    sp = submodule foreach git pull
