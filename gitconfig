@@ -81,3 +81,7 @@
 
     # Pull all submodules
     sp = submodule foreach git pull
+
+    # git svn bridge
+    svr = svn rebase
+    svc = svn dcommit
