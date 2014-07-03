@@ -17,17 +17,14 @@ alias morec='more -R'
 alias lesscolor='less -R'
 alias morecolor='more -R'
 alias st='/opt/sublime_text/sublime_text'
-alias web='firefox'
+alias tree='tree -C'
+alias web='google-chrome'
 
 alias _="sudo"
 
 #################################
 # git
 alias g='git'
-# git-svn
-alias gsr='git svn rebase'
-alias gsc='git svn dcommit'
-alias gsi='git svn info'
 
 #################################
 # Utilities
@@ -107,3 +104,8 @@ alias vl="vagrant list"
 # requires vagrant-hostmanager plugin
 alias vhst="vagrant hostmanager"
 
+#################################
+# Gulp Aliases
+alias gus='gulp server | ./node_modules/.bin/bunyan -o short'
+alias gut='gulp test'
+alias gub='gulp build'
