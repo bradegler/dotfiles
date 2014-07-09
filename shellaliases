@@ -58,6 +58,8 @@ alias to.build='cd /data/erx/build/current'
 alias to.boss='cd /data/tools/jboss-as-7.1.1.Final'
 alias to.ehm='cd /data/git/sparkea'
 
+atl() { ssh $1-admin.enterpriserx.ndchealth.com; }
+
 #################################
 # docker
 #alias docker="sudo docker"
@@ -109,3 +111,7 @@ alias vhst="vagrant hostmanager"
 alias gus='gulp server | ./node_modules/.bin/bunyan -o short'
 alias gut='gulp test'
 alias gub='gulp build'
+
+#################################
+# Gradle Aliases
+alias gw='gradlew'

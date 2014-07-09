@@ -84,4 +84,4 @@
 
     # git svn bridge
     svr = svn rebase
-    svc = svn dcommit
+    svd = svn dcommit
