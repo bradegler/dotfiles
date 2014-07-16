@@ -32,3 +32,13 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 #sudo groupadd docker
 #sudo gpasswd -a myusername docker
 #sudo service docker restart
+
+### Install
+#sudo apt-add-repository ppa:xorg-edgers/ppa
+#sudo apt-get update
+#sudo apt-get install nvidia-current nvidia-settings
+
+### Uninstall
+
+#sudo nvidia-settings --uninstall
+#sudo apt-get remove --purge nvidia*
