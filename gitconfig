@@ -75,6 +75,7 @@
     # Logs
     l  = log --pretty=oneline --decorate --abbrev-commit --max-count=15
     ll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg  = log --graph --pretty=oneline --decorate --abbrev-commit
 
     # Sync
     sync = plu && pso

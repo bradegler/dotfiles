@@ -171,7 +171,7 @@ function get_git_info_master () {
   # If there are any branches
   if [[ "$branch" != "" ]]; then
     # Echo the branch
-    if [[ "master" == "$branch" ]]; then
+    if [[ "master" == "$branch" || "head/dev" == "$branch" ]]; then
         output="$branch"
     fi
     # Echo our output
@@ -185,7 +185,7 @@ function get_git_info_branch () {
   # If there are any branches
   if [[ "$branch" != "" ]]; then
     # Echo the branch
-    if [[ "master" != "$branch" ]]; then
+    if [[ "master" != "$branch" && "head/dev" != "$branch" ]]; then
         output="$branch"
     fi
     # Echo our output
