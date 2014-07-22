@@ -20,7 +20,7 @@
 	default = matching
 [core]
 	editor = vim
-	autoclrf = false
+	autocrlf = false
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 
@@ -75,7 +75,8 @@
     # Logs
     l  = log --pretty=oneline --decorate --abbrev-commit --max-count=15
     ll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    lg  = log --graph --pretty=oneline --decorate --abbrev-commit
+    lg = log --graph --pretty=oneline --decorate --abbrev-commit
+    ls = log --pretty=format:'[%h] %an %ar: %s' --stat
 
     # Sync
     sync = plu && pso
