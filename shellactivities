@@ -295,3 +295,13 @@ function parse_yaml() {
       }
    }'
 }
+
+function yaml_to_env() {
+  local file=$1
+  raw=$(parse_yaml $file)
+  for option in `echo $raw`
+    do
+      echo $option
+      eval export $option
+    done
+}
