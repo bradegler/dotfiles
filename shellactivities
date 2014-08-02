@@ -305,3 +305,10 @@ function yaml_to_env() {
       eval export $option
     done
 }
+
+function rm_jira_branches() {
+    for file in `git branch | grep ERX-`
+    do 
+      git branch -D $file
+    done
+}
