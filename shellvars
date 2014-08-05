@@ -35,5 +35,3 @@ export GOROOT=/data/tools/go
 
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin
-
-export GOPATH=.

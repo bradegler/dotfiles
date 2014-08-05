@@ -64,6 +64,7 @@ atl() { ssh $1-admin.enterpriserx.ndchealth.com; }
 #################################
 # docker
 #alias docker="sudo docker"
+alias d="docker"
 # Get latest container ID
 alias dl="docker ps -l -q"
 # Get container process
@@ -94,6 +95,7 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 
 #################################
 # Vagrant Aliases
+alias v="vagrant"
 alias vup="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant suspend"
