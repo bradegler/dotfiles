@@ -17,7 +17,7 @@ sudo apt-get install \
     check rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller filezilla \
     filezilla-common gimp gimp-data gimp-data-extras nginx libaio1 openssh-server g++ curl libssl-dev apache2-utils \
     git-core gnome-shell gnome-shell-extensions gdm dos2unix alien network-manager-vpnc tilda htop vagrant libpq-dev \
-    git-svn monit gawk apt-transport-https
+    git-svn monit gawk apt-transport-https mercurial vim-gnome
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
