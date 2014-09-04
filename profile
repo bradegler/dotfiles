@@ -15,4 +15,4 @@ source ~/.shellactivities
 source ~/.shellvars
 source ~/.shellpaths
 source ~/.shellaliases
-
+source ~/.shelllocal
