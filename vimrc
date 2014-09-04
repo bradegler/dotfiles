@@ -15,3 +15,5 @@ set expandtab
 set ai
 set vb
 set backspace=indent,eol,start
+
+colorscheme monokai

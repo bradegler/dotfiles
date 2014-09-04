@@ -25,6 +25,7 @@ alias _="sudo"
 #################################
 # git
 alias g='git'
+alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 
 #################################
 # Utilities
