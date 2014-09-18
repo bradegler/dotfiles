@@ -32,6 +32,7 @@ alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 
 # Cat the oracle tns file
 alias show.tns='cat $ORACLE_HOME/network/admin/tnsnames.ora'
+alias sql='rlwrap -c sqlplus $@'
 alias hexdumpfile='od -h'
 # Lists the ten most used commands.
 alias history.stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
