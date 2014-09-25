@@ -15,6 +15,6 @@ source ~/.shellactivities
 source ~/.shellvars
 source ~/.shellpaths
 source ~/.shellaliases
-if [ -e "~/.shelllocal" ]; then
+if [ -e ~/.shelllocal ]; then
     source ~/.shelllocal
 fi
