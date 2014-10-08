@@ -89,3 +89,4 @@
     # git svn bridge
     svr = svn rebase
     svd = svn dcommit
+    svl = svn log --oneline --show-commit
