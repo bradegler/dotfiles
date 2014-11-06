@@ -28,9 +28,9 @@ export ORACLE_HOME=/data/tools/oracle/11_2
 export ANT_HOME=/data/tools/apache-ant-1.8.4
 export JAVA_HOME=/data/tools/java/current
 export ORACLE_HOME=/data/tools/oracle/11_2
-export GROOVY_HOME=/data/tools/groovy-2.3.2
-export GRADLE_HOME=/data/tools/gradle-1.12
-export SCALA_HOME=/data/tools/scala-2.11.1
+export GROOVY_HOME=/data/tools/groovy-2.3.7
+export GRADLE_HOME=/data/tools/gradle-2.1
+export SCALA_HOME=/data/tools/scala-2.11.2
 export GOROOT=/data/tools/go
 
 export SQLPATH=$ORACLE_HOME/bin
