@@ -51,6 +51,10 @@ alias files.open='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|
 alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep Users'
 
 #################################
+# Common Curl Commands
+alias cujs='curl -H "Accept: application/json" -H "Content-Type: application/json"'
+
+#################################
 # Location jumps
 
 alias to.erx='cd /data/erx'
