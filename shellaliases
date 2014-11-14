@@ -62,6 +62,7 @@ alias to.ehm='cd /data/git/sparkea'
 alias to.dev='cd /data/git/dev'
 
 atl() { ssh $1-admin.enterpriserx.ndchealth.com; }
+dev() { ssh $1.dev.enterpriserx.ndchealth.com; }
 
 #################################
 # docker
