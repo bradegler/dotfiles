@@ -1,7 +1,15 @@
 #!/bin/bash
 
+WHERE=$1
+
+if [ -z $1 ]; then
+    WHERE=$HOME
+fi
+
+echo Creating links in $WHERE
+
 bkp_dir=.backup.dotfiles  
-dot_dir=$HOME/.dotfiles
+dot_dir=$WHERE/.dotfiles
 
 mkdir -p $bkp_dir
 
