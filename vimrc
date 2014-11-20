@@ -12,8 +12,8 @@ set nowritebackup
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set ai
-set vb
+" set ai
+ set vb
 set backspace=indent,eol,start
 
 " colorscheme monokai
