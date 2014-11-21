@@ -270,9 +270,14 @@ function _gulp_completions() {
   COMPREPLY=($(compgen -W "$compls" -- "$cur"))
 }
 
-complete -o default -F _gulp_completions gulp
+function cmd_exists() {
+    type "$1" &> /dev/null ;
+}
 
-eval "$(gulp --completion=bash)"
+if cmd_exists gulp; then
+    complete -o default -F _gulp_completions gulp
+    eval "$(gulp --completion=bash)"
+fi
 
 function ryaml {
 
