@@ -122,4 +122,5 @@ alias gub='gulp build'
 
 #################################
 # Gradle Aliases
-alias gw='gradle'
+alias gr='gradle'
+alias gw='gradlew'
