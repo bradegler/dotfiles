@@ -261,23 +261,9 @@ function ram() {
   fi
 }
 
-function _gulp_completions() {
-  # The currently-being-completed word.
-  local cur="${COMP_WORDS[COMP_CWORD]}"
-  #Grab tasks
-  local compls=$(gulp --tasks-simple)
-  # Tell complete what stuff to show.
-  COMPREPLY=($(compgen -W "$compls" -- "$cur"))
-}
-
 function cmd_exists() {
     type "$1" &> /dev/null ;
 }
-
-if cmd_exists gulp; then
-    complete -o default -F _gulp_completions gulp
-    eval "$(gulp --completion=bash)"
-fi
 
 function ryaml {
 
