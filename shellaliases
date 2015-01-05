@@ -26,6 +26,8 @@ alias _="sudo"
 # git
 alias g='git'
 alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
+# snv
+alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
 #################################
 # Utilities
