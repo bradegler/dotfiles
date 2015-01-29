@@ -31,7 +31,7 @@ alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
 #################################
 # Utilities
-alias what.installed="( zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
+alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
 # Cat the oracle tns file
 alias show.tns='cat $ORACLE_HOME/network/admin/tnsnames.ora'
 alias sql='rlwrap -c sqlplus $@'
