@@ -54,7 +54,8 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 
 #################################
 # Common Curl Commands
-alias cujs='curl -H "Accept: application/json" -H "Content-Type: application/json $*; echo"'
+alias cujs='curl -H "Accept: application/json" -H "Content-Type: application/json" -w "\n" -i '
+alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 
 #################################
 # Location jumps
