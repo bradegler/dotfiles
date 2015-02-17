@@ -16,8 +16,8 @@ sudo apt-get -yq install \
     cifs-utils winbind build-essential checkinstall cdbs devscripts dh-make fakeroot libxml-parser-perl \
     check rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller filezilla \
     filezilla-common gimp gimp-data gimp-data-extras libaio1 openssh-server g++ curl libssl-dev apache2-utils \
-    git-core gnome-shell gnome-shell-extensions gdm dos2unix alien network-manager-vpnc tilda htop vagrant libpq-dev \
-    git-svn monit gawk apt-transport-https mercurial vim-gnome rlwrap libcurl4-openssl-dev libexpat1-dev
+    git-core gnome-shell gnome-shell-extensions gdm dos2unix alien htop libpq-dev \
+    git-svn gawk apt-transport-https mercurial vim-gnome rlwrap libcurl4-openssl-dev libexpat1-dev
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
@@ -34,9 +34,9 @@ sudo apt-get -yq install lxc-docker
 #sudo service docker restart
 
 ### Install
-#sudo apt-add-repository ppa:xorg-edgers/ppa
-#sudo apt-get update
-#sudo apt-get install nvidia-current nvidia-settings
+sudo apt-add-repository ppa:xorg-edgers/ppa
+sudo apt-get -yq update
+sudo apt-get -yq install nvidia-current nvidia-settings
 
 ### Uninstall
 
