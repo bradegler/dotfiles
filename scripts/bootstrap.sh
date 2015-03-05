@@ -16,11 +16,21 @@ sudo apt-get -yq install \
     cifs-utils winbind build-essential checkinstall cdbs devscripts dh-make fakeroot libxml-parser-perl \
     check rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller filezilla \
     filezilla-common gimp gimp-data gimp-data-extras libaio1 openssh-server g++ curl libssl-dev apache2-utils \
-    git-core gnome-shell gnome-shell-extensions gdm dos2unix alien network-manager-vpnc tilda htop vagrant libpq-dev \
-    git-svn monit gawk apt-transport-https mercurial vim-gnome rlwrap libcurl4-openssl-dev libexpat1-dev
+    git-core gnome-shell gnome-shell-extensions gdm dos2unix alien htop libpq-dev \
+    git-svn gawk apt-transport-https mercurial vim-gnome rlwrap libcurl4-openssl-dev libexpat1-dev \
+    lsb-release scrot cloc cowsay pwgen fish python2.7
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
+wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+
+chmod +x screenfetch
+
+sudo mv screenfetch /usr/local/bin
+
+wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+
+sudo easy_install pip
 
 # Install docker
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
@@ -30,13 +40,13 @@ sudo apt-get -yq install lxc-docker
 
 # Add user to docker group so you don't have to sudo anymore
 #sudo groupadd docker
-#sudo gpasswd -a myusername docker
-#sudo service docker restart
+sudo gpasswd -a begler docker
+sudo service docker restart
 
 ### Install
-#sudo apt-add-repository ppa:xorg-edgers/ppa
-#sudo apt-get update
-#sudo apt-get install nvidia-current nvidia-settings
+sudo apt-add-repository ppa:xorg-edgers/ppa
+sudo apt-get -yq update
+sudo apt-get -yq install nvidia-current nvidia-settings
 
 ### Uninstall
 
