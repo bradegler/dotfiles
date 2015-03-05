@@ -19,6 +19,7 @@ alias morecolor='more -R'
 alias st='/opt/sublime_text/sublime_text'
 alias tree='tree -C'
 alias web='google-chrome'
+alias agi='sudo apt-get install'
 
 alias _="sudo"
 
@@ -127,3 +128,8 @@ alias gub='gulp build'
 # Gradle Aliases
 alias gr='gradle'
 alias gw='gradlew'
+
+################################
+# svn aliases
+alias svn.tree.conflict='svn resolve --accept working -R'
+alias svn.revert='svn revert'
