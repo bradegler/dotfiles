@@ -26,3 +26,15 @@ do
     fi
 
 done
+
+mkdir -p .config/fish
+
+if [[ -L ".config/fish/config.fish" ]]; then
+    echo $file is a symbolic link
+else
+    echo Moving .config/fish/config.fish
+    mv .config/fish/config.fish $bkp_dir
+    ln -s $dot_dir/config.fish .config/fish/config.fish
+fi
+
+ln -s $dot_dir/oh-my-fish/theme ~/.oh-my-fish/themes/my 
