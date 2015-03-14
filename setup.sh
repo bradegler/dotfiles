@@ -37,4 +37,5 @@ else
     ln -s $dot_dir/config.fish .config/fish/config.fish
 fi
 
-ln -s $dot_dir/oh-my-fish/theme ~/.oh-my-fish/themes/my 
+mkdir -p ~/.oh-my-fish/themes/my
+cp $dot_dir/oh-my-fish/theme/* ~/.oh-my-fish/themes/my 
