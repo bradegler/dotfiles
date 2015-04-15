@@ -71,6 +71,9 @@ function dbu
     docker build -t=$1 .;
 end
 
+# docker-machine
+alias dm 'docker-machine'
+
 #################################
 # Vagrant Aliases
 alias v 'vagrant'
