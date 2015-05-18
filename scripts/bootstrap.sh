@@ -12,7 +12,7 @@ sudo apt-get -yq dist-upgrade
 
 ## everything that needs installed
 sudo apt-get -yq install \
-    guake vim git gitk subversion lib32z1 lib32ncurses5 lib32bz2-1.0 synergy samba system-config-samba \
+    guake vim git gitk subversion lib32z1 lib32ncurses5 lib32bz2-1.0 samba system-config-samba \
     cifs-utils winbind build-essential checkinstall cdbs devscripts dh-make fakeroot libxml-parser-perl \
     check rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller filezilla \
     filezilla-common gimp gimp-data gimp-data-extras libaio1 openssh-server g++ curl libssl-dev apache2-utils \
@@ -32,6 +32,13 @@ wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
 
 sudo easy_install pip
 
+# Install synergy
+
+wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu trusty-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+sudo apt-get -yq update
+sudo apt-get -yq synergy
+
 # Install docker
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
 sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
@@ -44,9 +51,9 @@ sudo gpasswd -a begler docker
 sudo service docker restart
 
 ### Install
-sudo apt-add-repository ppa:xorg-edgers/ppa
-sudo apt-get -yq update
-sudo apt-get -yq install nvidia-current nvidia-settings
+#sudo apt-add-repository ppa:xorg-edgers/ppa
+#sudo apt-get -yq update
+#sudo apt-get -yq install nvidia-current nvidia-settings
 
 ### Uninstall
 
