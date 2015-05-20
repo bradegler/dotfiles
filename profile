@@ -13,8 +13,8 @@ export EDITOR='vi'
 source ~/.shellcolors
 source ~/.shellactivities
 source ~/.shellvars
-source ~/.shellpaths
-source ~/.shellaliases
 if [ -e ~/.shelllocal ]; then
     source ~/.shelllocal
 fi
+source ~/.shellpaths
+source ~/.shellaliases
