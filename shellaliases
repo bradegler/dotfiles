@@ -53,6 +53,8 @@ alias files.open='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|
 # Files in use in the Users directory
 alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep Users'
 
+alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+
 #################################
 # Common Curl Commands
 alias cujs='curl -H "Accept: application/json" -H "Content-Type: application/json" -w "\n" -i '
