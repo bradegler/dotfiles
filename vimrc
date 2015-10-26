@@ -30,4 +30,6 @@ set nowritebackup
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set vb
+set noai
 set backspace=indent,eol,start

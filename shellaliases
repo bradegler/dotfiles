@@ -62,17 +62,6 @@ alias cujs='cu -H "Accept: application/json" -H "Content-Type: application/json"
 alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 
 #################################
-# Location jumps
-
-alias to.erx='cd /data/erx'
-alias to.tools='cd /data/tools'
-alias to.trunk='cd /data/erx/source/trunk'
-alias to.build='cd /data/erx/build/current'
-alias to.boss='cd /data/tools/jboss-as-7.1.1.Final'
-alias to.ehm='cd /data/git/sparkea'
-alias to.dev='cd /data/git/dev'
-
-#################################
 # docker
 #alias docker="sudo docker"
 alias d="docker"

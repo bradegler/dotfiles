@@ -18,7 +18,7 @@ sudo apt-get -yq install \
     filezilla-common gimp gimp-data gimp-data-extras libaio1 openssh-server g++ curl libssl-dev apache2-utils \
     git-core gnome-shell gnome-shell-extensions gdm dos2unix alien htop libpq-dev \
     git-svn gawk apt-transport-https mercurial vim-gnome rlwrap libcurl4-openssl-dev libexpat1-dev \
-    lsb-release scrot cloc cowsay pwgen fish python2.7
+    lsb-release scrot cloc cowsay pwgen fish python2.7 cmake
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
