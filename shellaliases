@@ -30,6 +30,7 @@ alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 # snv
 alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
+alias e='ember'
 #################################
 # Utilities
 #alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
