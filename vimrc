@@ -13,6 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'klen/python-mode'
 Plug 'nanotech/jellybeans.vim'
+Plug 'martintreurnicht/vim-gradle'
 call plug#end()
 
 colorscheme jellybeans

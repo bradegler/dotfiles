@@ -22,11 +22,11 @@ sudo apt-get -yq install \
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+#wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
 
-chmod +x screenfetch
+#chmod +x screenfetch
 
-sudo mv screenfetch /usr/local/bin
+#sudo mv screenfetch /usr/local/bin
 
 wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
 
