@@ -20,6 +20,7 @@ alias st='/opt/sublime_text/sublime_text'
 alias tree='tree -C'
 alias web='google-chrome'
 alias agi='sudo apt-get install'
+alias py='python'
 
 alias _="sudo"
 
@@ -31,6 +32,8 @@ alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
 alias e='ember'
+alias es='ember server'
+alias esd='ember server --environment=docker'
 #################################
 # Utilities
 #alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
@@ -65,7 +68,9 @@ alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 #################################
 # docker
 #alias docker="sudo docker"
+#alias d="docker --dns=10.55.224.100"
 alias d="docker"
+#--dns=10.7.224.10"
 # Get latest container ID
 alias dl="docker ps -l -q"
 # Get container process
@@ -132,3 +137,6 @@ alias gw='gradlew'
 # svn aliases
 alias svn.tree.conflict='svn resolve --accept working -R'
 alias svn.revert='svn revert'
+
+
+alias azure.dcos='ssh -i /home/begler/.ssh/azure_rsa azureuser@dcosmaster4vywcimsdywaq.eastus2.cloudapp.azure.com -p 2200 -L 8000:localhost:80'

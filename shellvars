@@ -21,13 +21,12 @@ xterm*|rxvt*)
     ;;
 esac
 
-export JAVA_HOME=/data/tools/java/current
-export ANT_HOME=/data/tools/apache-ant-1.9.4
-export ORACLE_HOME=/data/tools/oracle/11_2
-export GROOVY_HOME=/data/tools/groovy-2.3.7
-export GRADLE_HOME=/data/tools/gradle-2.1
-export SCALA_HOME=/data/tools/scala-2.11.4
-export GOROOT=/data/tools/go
+export JAVA_HOME=/opt/tools/java/current
+export ANT_HOME=/opt/tools/apache-ant-1.9.6
+export ORACLE_HOME=/opt/tools/oracle/12_1
 
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin
+
+export CATALINA_BASE=/opt/deploy/cps/config/tomcat
+
