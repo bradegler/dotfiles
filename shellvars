@@ -24,6 +24,7 @@ esac
 export JAVA_HOME=/opt/tools/java/current
 export ANT_HOME=/opt/tools/apache-ant-1.9.6
 export ORACLE_HOME=/opt/tools/oracle/12_1
+export GRADLE_HOME=/opt/tools/gradle-3.0
 
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin

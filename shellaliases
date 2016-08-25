@@ -73,6 +73,8 @@ alias d="docker"
 #--dns=10.7.224.10"
 # Get latest container ID
 alias dl="docker ps -l -q"
+# List volumes
+alias dv="docker volume ls"
 # Get container process
 alias dps="docker ps"
 # Get process included stop container
@@ -91,7 +93,10 @@ dstop() { docker stop $(docker ps -a -q);}
 drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+# Delete all dangling images
 alias drmd='docker rmi $(docker images -f "dangling=true" -q)'
+# Delete all dangling volumes
+drmv() { docker volume rm $(docker volume ls -qf dangling=true); }
 # Remove all images
 dri() { docker rmi $(docker images -q); }
 # Dockerfile build, e.g., $dbu tcnksm/test 
@@ -104,6 +109,9 @@ dex() { docker exec -it $1 /bin/bash; }
 # docker machine
 alias dm="docker-machine"
 alias dc="docker-compose"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcu="docker-compose up"
 
 #################################
 # Vagrant Aliases
@@ -138,5 +146,9 @@ alias gw='gradlew'
 alias svn.tree.conflict='svn resolve --accept working -R'
 alias svn.revert='svn revert'
 
+alias eant='TOMCAT_HOME=/opt/tools/apache-tomcat-5.5.36 JAVA_HOME=/opt/tools/java/jdk1.7.0_79 ant'
+
 
 alias azure.dcos='ssh -i /home/begler/.ssh/azure_rsa azureuser@dcosmaster4vywcimsdywaq.eastus2.cloudapp.azure.com -p 2200 -L 8000:localhost:80'
+
+alias az='azure'
