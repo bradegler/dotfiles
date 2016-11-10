@@ -11,7 +11,7 @@ export PS1="\
   echo -n \"\[$prompt_git_status_color\]\$(get_git_status)\" && \
   echo -n \"\[$prompt_git_progress_color\]\$(get_git_progress)\" && \
   echo -n \"\[$prompt_preposition_color\]]\")\[$prompt_reset\]\
-$ "
+$(__docker_machine_ps1)$ "
 
 case "$TERM" in
 xterm*|rxvt*)
@@ -21,6 +21,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+<<<<<<< HEAD
 export JAVA_HOME=/opt/dev/tools/java/current
 export ANT_HOME=/opt/dev/tools/apache-ant-1.9.7
 export ORACLE_HOME=/data/tools/oracle/11_2
@@ -28,6 +29,16 @@ export GROOVY_HOME=/data/tools/groovy-2.3.7
 export GRADLE_HOME=/opt/dev/tools/gradle-3.0
 export SCALA_HOME=/data/tools/scala-2.11.4
 export GOROOT=/data/tools/go
+=======
+export JAVA_HOME=/opt/tools/java/current
+export ANT_HOME=/opt/tools/apache-ant-1.9.6
+export ORACLE_HOME=/opt/tools/oracle/12_1
+export GRADLE_HOME=/opt/tools/gradle-3.0
+>>>>>>> 7286f3830e05f60ab9c717f4cc311c6f2ab0ad83
 
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin
+
+export CATALINA_BASE=/opt/deploy/cps/config/tomcat
+export REDIS_HOME=/opt/tools/redis-3.2.3/src
+export PATH=$REDIS_HOME:$PATH

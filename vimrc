@@ -5,7 +5,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
-Plug 'bling/vim-airline'
+"Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tomasr/molokai'
@@ -16,10 +18,14 @@ Plug 'klen/python-mode'
 Plug 'nanotech/jellybeans.vim'
 Plug 'martintreurnicht/vim-gradle'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " colorscheme jellybeans
+set background=dark
 colorscheme hybrid_material
+
+let g:airline_theme = "hybrid"
 
 set showcmd
 set showmatch
@@ -33,6 +39,7 @@ set expandtab
 set vb
 set noai
 set backspace=indent,eol,start
+<<<<<<< HEAD
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
@@ -56,3 +63,17 @@ nmap <C-M-Up> <C-w>n
 nmap <C-M-Down> <C-w>N
 nmap <C-M-Right> <C-w>v
 nmap <C-M-Left> <C-w>V
+=======
+set encoding=utf-8
+set nu
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let g:vim_markdown_folding_disabled = 1
+>>>>>>> 7286f3830e05f60ab9c717f4cc311c6f2ab0ad83
