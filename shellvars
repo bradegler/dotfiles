@@ -21,11 +21,11 @@ xterm*|rxvt*)
     ;;
 esac
 
-export JAVA_HOME=/data/tools/java/current
-export ANT_HOME=/data/tools/apache-ant-1.9.4
+export JAVA_HOME=/opt/dev/tools/java/current
+export ANT_HOME=/opt/dev/tools/apache-ant-1.9.7
 export ORACLE_HOME=/data/tools/oracle/11_2
 export GROOVY_HOME=/data/tools/groovy-2.3.7
-export GRADLE_HOME=/data/tools/gradle-2.1
+export GRADLE_HOME=/opt/dev/tools/gradle-3.0
 export SCALA_HOME=/data/tools/scala-2.11.4
 export GOROOT=/data/tools/go
 
