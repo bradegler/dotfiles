@@ -1,0 +1,22 @@
+#!/bin/sh
+#To make use of this just copy it to your path, +x it, and do git sync
+MAIN_BRANCH="master"
+
+CURRENT_CHANGES=`git status --porcelain`
+CURRENT_BRANCH=`git symbolic-ref -q --short HEAD`
+
+if [ "$CURRENT_CHANGES" != "" ]; then
+  git stash --include-untracked
+fi
+if [ "$CURRENT_BRANCH" != "$MAIN_BRANCH" ]; then
+  git checkout $MAIN_BRANCH
+fi
+git fetch upstream
+git merge upstream/$MAIN_BRANCH
+if [ "$CURRENT_BRANCH" != "$MAIN_BRANCH" ]; then
+  git checkout $CURRENT_BRANCH
+fi
+git rebase $MAIN_BRANCH
+if [ "$CURRENT_CHANGES" != "" ]; then
+  git stash pop
+fi

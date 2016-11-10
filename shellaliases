@@ -3,6 +3,7 @@
 #################################
 # Simple program name / common args shortening
 #
+alias ..='cd ../'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -146,9 +147,13 @@ alias gw='gradlew'
 alias svn.tree.conflict='svn resolve --accept working -R'
 alias svn.revert='svn revert'
 
-alias eant='TOMCAT_HOME=/opt/tools/apache-tomcat-5.5.36 JAVA_HOME=/opt/tools/java/jdk1.7.0_79 ant'
+alias eant='TOMCAT_HOME=/opt/tools/apache-tomcat-5.5.36 JAVA_HOME=/opt/tools/java/jdk1.7.0_79 JAVA5_HOME=/opt/tools/java/jdk1.5.0_22 ant'
 
 
 alias azure.dcos='ssh -i /home/begler/.ssh/azure_rsa azureuser@dcosmaster4vywcimsdywaq.eastus2.cloudapp.azure.com -p 2200 -L 8000:localhost:80'
 
 alias az='azure'
+
+
+alias erx.src='cd /opt/mck/erx/source/git'
+alias cps.src='cd /opt/cps/cps'
