@@ -33,10 +33,7 @@ alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
 alias e='ember'
-<<<<<<< HEAD
-=======
 alias es='ember server'
->>>>>>> 7286f3830e05f60ab9c717f4cc311c6f2ab0ad83
 alias esd='ember server --environment=docker'
 #################################
 # Utilities
@@ -152,17 +149,11 @@ alias gw='gradlew'
 alias svn.tree.conflict='svn resolve --accept working -R'
 alias svn.revert='svn revert'
 
-<<<<<<< HEAD
 alias azure.dcos='ssh -i /home/begler/.ssh/azure_rsa azureuser@dcosmaster4vywcimsdywaq.eastus2.cloudapp.azure.com -p 2200 -L 8000:localhost:80'
-=======
 alias eant='TOMCAT_HOME=/opt/tools/apache-tomcat-5.5.36 JAVA_HOME=/opt/tools/java/jdk1.7.0_79 JAVA5_HOME=/opt/tools/java/jdk1.5.0_22 ant'
-
-
-alias azure.dcos='ssh -i /home/begler/.ssh/azure_rsa azureuser@dcosmaster4vywcimsdywaq.eastus2.cloudapp.azure.com -p 2200 -L 8000:localhost:80'
 
 alias az='azure'
 
 
 alias erx.src='cd /opt/mck/erx/source/git'
 alias cps.src='cd /opt/cps/cps'
->>>>>>> 7286f3830e05f60ab9c717f4cc311c6f2ab0ad83

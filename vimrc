@@ -39,7 +39,6 @@ set expandtab
 set vb
 set noai
 set backspace=indent,eol,start
-<<<<<<< HEAD
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
@@ -63,7 +62,6 @@ nmap <C-M-Up> <C-w>n
 nmap <C-M-Down> <C-w>N
 nmap <C-M-Right> <C-w>v
 nmap <C-M-Left> <C-w>V
-=======
 set encoding=utf-8
 set nu
 
@@ -76,4 +74,3 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 let g:vim_markdown_folding_disabled = 1
->>>>>>> 7286f3830e05f60ab9c717f4cc311c6f2ab0ad83
