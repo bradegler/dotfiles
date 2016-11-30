@@ -19,6 +19,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'martintreurnicht/vim-gradle'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " colorscheme jellybeans
@@ -51,3 +52,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 let g:vim_markdown_folding_disabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
