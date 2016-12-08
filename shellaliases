@@ -1,9 +1,6 @@
-#!/bin/sh
-
-#################################
 # Simple program name / common args shortening
 #
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -32,7 +29,7 @@ alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
 #################################
 # Utilities
-alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
+#alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
 # Cat the oracle tns file
 alias show.tns='cat $ORACLE_HOME/network/admin/tnsnames.ora'
 alias sql='rlwrap -c sqlplus $@'
@@ -57,7 +54,9 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 #################################
 # Common Curl Commands
-alias cujs='curl -H "Accept: application/json" -H "Content-Type: application/json" -w "\n" -i '
+alias cu='curl -w "\n" -i '
+alias cujs='cu -H "Accept: application/json" -H "Content-Type: application/json"'
+alias cuxml='cu -H "Accept: text/xml" -H "Content-Type: text/xml"'
 alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 
 #################################
@@ -130,3 +129,9 @@ alias gw='gradlew'
 # svn aliases
 alias svn.tree.conflict='svn resolve --accept working -R'
 alias svn.revert='svn revert'
+
+alias e='ember'
+alias es='ember server'
+alias esd='ember server --environment=docker'
+alias esb='ember server --environment=browser'
+alias serve='python -m SimpleHTTPServer 8000'
