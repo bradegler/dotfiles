@@ -19,6 +19,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'martintreurnicht/vim-gradle'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " colorscheme jellybeans
@@ -39,6 +40,29 @@ set expandtab
 set vb
 set noai
 set backspace=indent,eol,start
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+
+" Window movements; I do this often enough to warrant using up M-arrows on
+" this"
+nnoremap <M-Right> <C-W><Right>
+nnoremap <M-Left> <C-W><Left>
+nnoremap <M-Up> <C-W><Up>
+nnoremap <M-Down> <C-W><Down>
+"
+" " Open window below instead of above"
+nnoremap <C-W>N :let sb=&sb<BAR>set sb<BAR>new<BAR>let &sb=sb<CR>
+"
+" " Vertical equivalent of C-w-n and C-w-N"
+nnoremap <C-w>v :vnew<CR>
+nnoremap <C-w>V :let spr=&spr<BAR>set nospr<BAR>vnew<BAR>let &spr=spr<CR>
+"
+" " I open new windows to warrant using up C-M-arrows on this"
+nmap <C-M-Up> <C-w>n
+nmap <C-M-Down> <C-w>N
+nmap <C-M-Right> <C-w>v
+nmap <C-M-Left> <C-w>V
 set encoding=utf-8
 set nu
 
@@ -51,3 +75,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 let g:vim_markdown_folding_disabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

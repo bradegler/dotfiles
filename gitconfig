@@ -90,6 +90,9 @@
 	svl			=			svn log --oneline --show-commit
 	#   enable credential storage
 	su			=			config credential.helper store
+    #   Mark file as unchanged
+    hide        =           update-index --assume-unchanged
+    unhide      =           update-index --no-assume-unchanged
 
 [merge]
 	tool = diffmerge

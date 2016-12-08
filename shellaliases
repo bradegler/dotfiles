@@ -1,6 +1,7 @@
 # Simple program name / common args shortening
 #
 #alias ls='ls --color=auto'
+alias ..='cd ../'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -17,6 +18,7 @@ alias st='/opt/sublime_text/sublime_text'
 alias tree='tree -C'
 alias web='google-chrome'
 alias agi='sudo apt-get install'
+alias py='python'
 
 alias _="sudo"
 
@@ -27,6 +29,9 @@ alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 # snv
 alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
 
+alias e='ember'
+alias es='ember server'
+alias esd='ember server --environment=docker'
 #################################
 # Utilities
 #alias what.installed="(zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:'"
@@ -42,6 +47,8 @@ alias network.connections='lsof -l -i +L -R -V'
 alias network.established='lsof -l -i +L -R -V | grep ESTABLISHED'
 alias network.internalip="ifconfig en0 | egrep -o '([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)'"
 alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+# Simple webserver for the current directory
+alias serve='python -m SimpleHTTPServer'
 
 # Files used, anywhere on the filesystem
 alias files.usage='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep'
@@ -62,9 +69,13 @@ alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 #################################
 # docker
 #alias docker="sudo docker"
+#alias d="docker --dns=10.55.224.100"
 alias d="docker"
+#--dns=10.7.224.10"
 # Get latest container ID
 alias dl="docker ps -l -q"
+# List volumes
+alias dv="docker volume ls"
 # Get container process
 alias dps="docker ps"
 # Get process included stop container
@@ -74,16 +85,19 @@ alias di="docker images"
 # Get container IP
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 # Run deamonized container, e.g., $dkd base /bin/echo hello
-alias dkd="docker run -d -P"
+alias dkd="docker run -d -P $docker_dns"
 # Run interactive container, e.g., $dki base /bin/bash
-alias dki="docker run -i -t -P"
+alias dki="docker run -i -t -P $docker_dns"
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q);}
 # Remove all containers
 drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+# Delete all dangling images
 alias drmd='docker rmi $(docker images -f "dangling=true" -q)'
+# Delete all dangling volumes
+drmv() { docker volume rm $(docker volume ls -qf dangling=true); }
 # Remove all images
 dri() { docker rmi $(docker images -q); }
 # Dockerfile build, e.g., $dbu tcnksm/test 
@@ -96,6 +110,9 @@ dex() { docker exec -it $1 /bin/bash; }
 # docker machine
 alias dm="docker-machine"
 alias dc="docker-compose"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcu="docker-compose up"
 
 #################################
 # Vagrant Aliases
@@ -135,3 +152,4 @@ alias es='ember server'
 alias esd='ember server --environment=docker'
 alias esb='ember server --environment=browser'
 alias serve='python -m SimpleHTTPServer 8000'
+alias az='azure'
