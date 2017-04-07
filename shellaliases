@@ -1,8 +1,6 @@
-#!/bin/sh
-
-#################################
 # Simple program name / common args shortening
 #
+#alias ls='ls --color=auto'
 alias ..='cd ../'
 #alias ls='ls --color=auto'
 #alias grep='grep --color=auto'
@@ -65,8 +63,9 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 #################################
 # Common Curl Commands
-alias cu='curl --verbose -w "\n" -i '
+alias cu='curl -w "\n" -i '
 alias cujs='cu -H "Accept: application/json" -H "Content-Type: application/json"'
+alias cuxml='cu -H "Accept: text/xml" -H "Content-Type: text/xml"'
 alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 
 #################################
@@ -152,7 +151,11 @@ alias svn.revert='svn revert'
 
 alias eant='TOMCAT_HOME=/opt/tools/apache-tomcat-5.5.36 JAVA_HOME=/opt/tools/java/jdk1.7.0_79 JAVA5_HOME=/opt/tools/java/jdk1.5.0_22 ant'
 
-alias az='azure'
-
 alias erx.src='cd ${DEV_HOME}/mck/erx/source/'
 alias cps.src='cd ${DEV_HOME}/cps/cps'
+alias e='ember'
+alias es='ember server'
+alias esd='ember server --environment=docker'
+alias esb='ember server --environment=browser'
+alias serve='python -m SimpleHTTPServer 8000'
+alias az='azure'
