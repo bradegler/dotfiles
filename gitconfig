@@ -21,6 +21,7 @@
 [core]
 	editor = vim
 	autocrlf = false
+    pager = less -R
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 

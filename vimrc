@@ -40,6 +40,7 @@ set expandtab
 set vb
 set noai
 set backspace=indent,eol,start
+set relativenumber
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 

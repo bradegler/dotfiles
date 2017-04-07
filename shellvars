@@ -22,7 +22,7 @@ esac
 
 export JAVA_HOME=/opt/dev/tools/java/current
 export ANT_HOME=/opt/dev/tools/apache-ant-1.9.7
-export ORACLE_HOME=/data/tools/oracle/11_2
+export ORACLE_HOME=~/opt/tools/oracle
 export GROOVY_HOME=/data/tools/groovy-2.3.7
 export GRADLE_HOME=/opt/dev/tools/gradle-3.2
 export SCALA_HOME=/data/tools/scala-2.11.4
@@ -34,3 +34,5 @@ export LD_LIBRARY_PATH=$ORACLE_HOME/bin
 export CATALINA_BASE=/opt/deploy/cps/config/tomcat
 export REDIS_HOME=/opt/tools/redis-3.2.3/src
 export PATH=$REDIS_HOME:$PATH
+
+export DEV_HOME=/opt
