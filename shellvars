@@ -26,7 +26,6 @@ export ORACLE_HOME=~/opt/tools/oracle
 export GROOVY_HOME=/data/tools/groovy-2.3.7
 export GRADLE_HOME=/opt/dev/tools/gradle-3.2
 export SCALA_HOME=/data/tools/scala-2.11.4
-export GOROOT=/data/tools/go
 
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin
