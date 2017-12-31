@@ -40,6 +40,8 @@
 	#	Commit				====
 	cm			=			commit -m
 	ca			=			commit --amend -m
+    #   Remote Origin       ====
+    ro          =           remote add origin
 	#	Checkout			====
 	co			=			checkout
 	cb			=			checkout -b
@@ -94,6 +96,8 @@
     #   Mark file as unchanged
     hide        =           update-index --assume-unchanged
     unhide      =           update-index --no-assume-unchanged
+    rao         =           remote add origin
+    rau         =           remote add upstream
 
 [merge]
 	tool = diffmerge
@@ -108,3 +112,8 @@
 	cmd = diffmerge $LOCAL $REMOTE
 [credential]
 	helper = cache
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

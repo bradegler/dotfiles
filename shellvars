@@ -30,7 +30,6 @@ export SCALA_HOME=/data/tools/scala-2.11.4
 export SQLPATH=$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=$ORACLE_HOME/bin
 
-export CATALINA_BASE=/opt/deploy/cps/config/tomcat
 export REDIS_HOME=/opt/tools/redis-3.2.3/src
 export PATH=$REDIS_HOME:$PATH
 
