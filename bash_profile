@@ -15,4 +15,4 @@ shopt -s histappend
 shopt -s cmdhist
 export PATH=$PATH:/Users/BradEgler/bin
 
-source '/Users/BradEgler/lib/azure-cli/az.completion'
+#source '/Users/BradEgler/lib/azure-cli/az.completion'

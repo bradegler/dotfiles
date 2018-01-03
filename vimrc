@@ -14,12 +14,14 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-haml'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 Plug 'nanotech/jellybeans.vim'
 Plug 'martintreurnicht/vim-gradle'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
+Plug 'fatih/vim-go'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " colorscheme jellybeans
