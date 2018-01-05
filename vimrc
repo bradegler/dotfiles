@@ -22,6 +22,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " colorscheme jellybeans
@@ -29,6 +30,7 @@ set background=dark
 colorscheme hybrid_material
 
 let g:airline_theme = "hybrid"
+let g:typescript_indent_disable = 1
 
 set showcmd
 set showmatch
