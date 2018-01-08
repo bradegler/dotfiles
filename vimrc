@@ -18,6 +18,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'martintreurnicht/vim-gradle'
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " Basic Settings
@@ -26,6 +27,9 @@ colorscheme hybrid_material
 
 set lazyredraw
 set hlsearch incsearch
+let g:airline_theme = "hybrid"
+let g:typescript_indent_disable = 1
+
 set showcmd
 set showmatch
 set ignorecase smartcase
