@@ -1,89 +1,104 @@
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Utility Plugins
+"Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/syntastic'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
-"Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pangloss/vim-javascript'
-"Plug 'Valloric/YouCompleteMe'
-Plug 'tomasr/molokai'
-Plug 'tpope/vim-haml'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'plasticboy/vim-markdown'
-"Plug 'klen/python-mode'
-Plug 'nanotech/jellybeans.vim'
-Plug 'martintreurnicht/vim-gradle'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'ctrlpvim/ctrlp.vim'
+" Just because...
 Plug 'mhinz/vim-startify'
+" Colors
+Plug 'kristijanhusak/vim-hybrid-material'
+" Syntax
+Plug 'tpope/vim-haml'
+Plug 'plasticboy/vim-markdown'
+Plug 'martintreurnicht/vim-gradle'
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
-" colorscheme jellybeans
+" Basic Settings
 set background=dark
 colorscheme hybrid_material
 
-let g:airline_theme = "hybrid"
-
+set lazyredraw
+set hlsearch incsearch
 set showcmd
 set showmatch
-set ignorecase
-set nobackup
-set noswapfile
-set nowritebackup
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set vb
-set noai
+set ignorecase smartcase
 set backspace=indent,eol,start
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set cursorline
+set nobackup noswapfile nowritebackup
+set shell=/bin/bash
+
+set vb
 set relativenumber
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-
-
-" Window movements; I do this often enough to warrant using up M-arrows on
-" this"
-nnoremap <M-Right> <C-W><Right>
-nnoremap <M-Left> <C-W><Left>
-nnoremap <M-Up> <C-W><Up>
-nnoremap <M-Down> <C-W><Down>
-"
-" " Open window below instead of above"
-nnoremap <C-W>N :let sb=&sb<BAR>set sb<BAR>new<BAR>let &sb=sb<CR>
-"
-" " Vertical equivalent of C-w-n and C-w-N"
-nnoremap <C-w>v :vnew<CR>
-nnoremap <C-w>V :let spr=&spr<BAR>set nospr<BAR>vnew<BAR>let &spr=spr<CR>
-"
-" " I open new windows to warrant using up C-M-arrows on this"
-nmap <C-M-Up> <C-w>n
-nmap <C-M-Down> <C-w>N
-nmap <C-M-Right> <C-w>v
-nmap <C-M-Left> <C-w>V
 set encoding=utf-8
-set nu
+set fileencoding=utf-8
+set ffs=unix,dos
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+set splitbelow splitright
 
+" Key Mappings
+let mapleader = ","
+
+" Exit insert
+inoremap jk     <esc>
+" Quick save
+nnoremap <leader>w :w<CR>
+" Toggle nerd tree
+nnoremap <leader>ne :NERDTreeToggle<CR>
+" Change to use Blackhole registers
+nnoremap x "_x
+nnoremap X "_X
+nnoremap c "_c
+nnoremap C "_C
+" Make Y behave more like D and C
+nnoremap Y y$
+" Buffer navigation
+nnoremap <silent> gb    :bnext<cr>
+nnoremap <silent> gB    :bprevious<cr>
+" Splits
+nnoremap <silent> <leader>s :sp<cr>
+nnoremap <silent> <leader>S :vsp<cr>
+" indenting keeps original selection in visual
+xnoremap > >gv
+xnoremap < <gv
+" reselect pasted text
+nnoremap <leader>v V`]
+" Fuzzy find files 
+noremap <silent> <leader><leader> :CtrlP<cr>
+" Open files in the same directory as the current file
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+" Keep search in the middle of the screen
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" Quick window movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Plugin Configuration
+let g:airline_theme = "hybrid"
 let g:vim_markdown_folding_disabled = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Autocmds
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+augroup vim
+    au!
+
+    " autosource vimrc on write
+    au BufWritePost .vimrc source $MYVIMRC
+augroup END
