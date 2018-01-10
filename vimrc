@@ -1,13 +1,13 @@
 call plug#begin('~/.vim/plugged')
 " Utility Plugins
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 "Plug 'scrooloose/syntastic'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 " Just because...
 Plug 'mhinz/vim-startify'
 " Colors
@@ -45,8 +45,30 @@ set relativenumber
 set encoding=utf-8
 set fileencoding=utf-8
 set ffs=unix,dos
-
 set splitbelow splitright
+
+" Status Line
+
+set laststatus=2
+set statusline=
+set statusline+=%2*\ %l
+set statusline+=\ %*
+set statusline+=%1*\ ‹‹
+set statusline+=%1*\ %f\ %*
+set statusline+=%1*\ ››
+set statusline+=%1*\ %m
+set statusline+=%1*\ %r
+set statusline+=%3*\ %y
+set statusline+=%=
+"set statusline+=%3*\ %{LinterStatus()}
+set statusline+=%3*\ ‹‹
+set statusline+=%1*\ (%l:%c)\ -\ %L
+set statusline+=%3*\ ::
+set statusline+=%2*\ %n
+set statusline+=%3*\ ››\ %*
+hi User1 ctermbg=DarkGrey ctermfg=White guibg=LightBlue guifg=Black
+hi User2 ctermbg=White   ctermfg=Blue guibg=White guifg=DarkGrey
+hi User3 ctermbg=Blue  ctermfg=White guibg=DarkGrey guifg=White
 
 " Key Mappings
 let mapleader = ","
