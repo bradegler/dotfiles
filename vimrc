@@ -6,8 +6,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 " Just because...
 Plug 'mhinz/vim-startify'
 " Colors
@@ -19,7 +17,12 @@ Plug 'martintreurnicht/vim-gradle'
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'leafgarland/typescript-vim'
+" Linting
+Plug 'w0rp/ale'
 call plug#end()
+
+packloadall
+silent! helptags ALL
 
 " Basic Settings
 set background=dark
@@ -27,8 +30,6 @@ colorscheme hybrid_material
 
 set lazyredraw
 set hlsearch incsearch
-let g:airline_theme = "hybrid"
-let g:typescript_indent_disable = 1
 
 set showcmd
 set showmatch
@@ -49,6 +50,19 @@ set splitbelow splitright
 
 " Status Line
 
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 set laststatus=2
 set statusline=
 set statusline+=%2*\ %l
@@ -60,7 +74,7 @@ set statusline+=%1*\ %m
 set statusline+=%1*\ %r
 set statusline+=%3*\ %y
 set statusline+=%=
-"set statusline+=%3*\ %{LinterStatus()}
+set statusline+=%3*\ %{LinterStatus()}
 set statusline+=%3*\ ‹‹
 set statusline+=%1*\ (%l:%c)\ -\ %L
 set statusline+=%3*\ ::
@@ -113,12 +127,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Turn off search highlight
+nnoremap <silent> <leader>h :set hlsearch!<CR>
 
 " Plugin Configuration
-let g:airline_theme = "hybrid"
 let g:vim_markdown_folding_disabled = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:typescript_indent_disable = 1
 
 " Autocmds
 
