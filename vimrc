@@ -115,10 +115,11 @@ nnoremap <leader>v V`]
 noremap <silent> <leader><leader> :CtrlP<cr>
 " Open files in the same directory as the current file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+nnoremap <leader>ew :e 
+nnoremap <leader>es :vsp 
+" Manage vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 " Keep search in the middle of the screen
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -140,7 +141,6 @@ let g:typescript_indent_disable = 1
 
 augroup vim
     au!
-
     " autosource vimrc on write
     au BufWritePost .vimrc source $MYVIMRC
 augroup END
