@@ -130,12 +130,6 @@ nnoremap <C-H> <C-W><C-H>
 " Turn off search highlight
 nnoremap <silent> <leader>h :set hlsearch!<CR>
 
-" Plugin Configuration
-let g:vim_markdown_folding_disabled = 1
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:typescript_indent_disable = 1
-
 " Autocmds
 
 augroup vim
@@ -144,3 +138,29 @@ augroup vim
     " autosource vimrc on write
     au BufWritePost .vimrc source $MYVIMRC
 augroup END
+
+" Plugin Configuration
+let g:vim_markdown_folding_disabled = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:typescript_indent_disable = 1
+let NERDTreeShowHidden=1
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('dart', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('java', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('sass', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
