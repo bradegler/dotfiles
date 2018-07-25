@@ -38,6 +38,7 @@
 	ad			=			add
 	aa			=			add .
 	#	Commit				====
+    c           =           commit
 	cm			=			commit -m
 	ca			=			commit --amend -m
     #   Remote Origin       ====
