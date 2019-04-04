@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " Utility Plugins
 Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -131,6 +131,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Turn off search highlight
 nnoremap <silent> <leader>h :set hlsearch!<CR>
+" Repeat on next line
+nnoremap <leader>. j0.
 
 " Autocmds
 
