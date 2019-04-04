@@ -63,10 +63,11 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 #################################
 # Common Curl Commands
-alias cu='curl -w "\n" -i '
+alias cu='curl -w "\n" -s'
+alias cui='cu -i '
 alias cujs='cu -H "Accept: application/json" -H "Content-Type: application/json"'
 alias cujsa='cujs -H "Authorization: $JWT"'
-alias cuxml='cu -H "Accept: text/xml" -H "Content-Type: text/xml"'
+alias cuxml='cui -H "Accept: text/xml" -H "Content-Type: text/xml"'
 alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
 
 #################################
@@ -160,6 +161,7 @@ alias esd='ember server --environment=docker'
 alias esb='ember server --environment=browser'
 alias serve='python -m SimpleHTTPServer 8000'
 alias az='azure'
+alias gc='gcloud'
 alias rn='react-native'
 alias m='make'
 alias f='flutter'
@@ -167,4 +169,8 @@ alias sls='serverless'
 
 alias a='ansible'
 alias ku='kubectl'
+alias kush='kubectl run -it --rm --restart=Never busybox --image=busybox sh'
 alias ko='kompose'
+alias he='helm'
+alias tf='terraform'
+alias jn='jupyter notebook --no-browser'
