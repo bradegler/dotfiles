@@ -1,4 +1,7 @@
 # Simple program name / common args shortening
+# --- --- --- --- --- --- --- ---
+# --- Static analysis
+# --- --- --- --- --- --- --- ---
 #
 #alias ls='ls --color=auto'
 alias ..='cd ../'
@@ -21,6 +24,7 @@ alias web='google-chrome'
 alias agi='sudo apt-get install'
 alias py='python'
 alias mh='mv $1 .'
+alias setpy='source /Users/begler/opt/environments/py37/bin/activate'
 
 alias _="sudo"
 
@@ -170,8 +174,11 @@ alias sls='serverless'
 alias a='ansible'
 alias ku='kubectl'
 alias kush='kubectl run -it --rm --restart=Never busybox --image=busybox sh'
+alias kn='kubens'
+alias kc='kubectx'
 alias ko='kompose'
 alias he='helm'
+alias mk='minikube'
 alias tf='terraform'
 alias jn='jupyter notebook --no-browser'
 

@@ -18,3 +18,5 @@ if [ -e ~/.shelllocal ]; then
 fi
 source ~/.shellpaths
 source ~/.shellaliases
+
+export PATH="$HOME/.cargo/bin:$PATH"
