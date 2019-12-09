@@ -13,7 +13,7 @@ dot_dir=$WHERE/.dotfiles
 
 mkdir -p $bkp_dir
 
-files=("bash_profile" "bashrc" "gitconfig" "profile" "vimrc" "shellvars" "shellpaths" "shellaliases" "shellactivities" "vim" "shellcolors", "tmux.conf")
+files=("bash_profile" "bashrc" "gitconfig" "profile" "vimrc" "shellvars" "shellpaths" "shellaliases" "shellactivities" "vim" "shellcolors" "tmux.conf")
 
 for file in "${files[@]}"
 do
