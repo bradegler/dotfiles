@@ -24,7 +24,8 @@ alias web='google-chrome'
 alias agi='sudo apt-get install'
 alias py='python'
 alias mh='mv $1 .'
-alias setpy='source /Users/begler/opt/environments/py37/bin/activate'
+alias setpy='source /Users/begler/opt/environments/37/bin/activate'
+alias op='cd ~/opt'
 
 alias _="sudo"
 
@@ -181,6 +182,7 @@ alias he='helm'
 alias mk='minikube'
 alias tf='terraform'
 alias jn='jupyter notebook --no-browser'
+alias c='cargo'
 
 # FnProject
 alias fns='fn start -d'
