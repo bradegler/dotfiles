@@ -92,6 +92,9 @@ let mapleader = ","
 inoremap jk     <esc>
 " Quick save
 nnoremap <leader>w :w<CR>
+" Quick save quit
+nnoremap <leader>q :wq<CR>
+
 " Toggle nerd tree
 nnoremap <leader>ne :NERDTreeToggle<CR>
 " Change to use Blackhole registers

@@ -29,3 +29,4 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+export PATH="$HOME/.cargo/bin:$PATH"
