@@ -26,7 +26,7 @@ setopt HIST_REDUCE_BLANKS
 setopt CORRECT
 setopt CORRECT_ALL
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 
 source $HOME/.all_profile
