@@ -42,7 +42,9 @@ zstyle ':completion:*' expand prefix suffix
 local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ )"
 
 #PROMPT='%F{15}[%F{99}%m%F{15}][%F{81}%3~%F{15}] ${ret_status} %f'
-PROMPT=' ${ret_status} %f'
+PROMPT='%F{15}[%F{81}%3~%F{15}]$vcs_info_msg_0_ ${ret_status} %f'
+#RPROMPT=\
+#PROMPT=' ${ret_status} %f'
 #PROMPT='%F{15}[%F{99}%m%F{15}][%F{81}%3~%F{15}] %f%# '
 
 autoload -Uz vcs_info
@@ -57,7 +59,7 @@ zstyle ':vcs_info:*' check-for-changes true
 
 zstyle ':vcs_info:*' stagedstr '%{%F{cyan}%B%}Ø%{%b%f%}'
 zstyle ':vcs_info:*' unstagedstr '%{%F{yellow}%B%}µ%{%b%f%}'
-zstyle ':vcs_info:git*' formats "%{$fg[grey]%}[%{$fg[green]%}%b%{$fg[grey]%}]%{$reset_color%} %m%u%c "
+zstyle ':vcs_info:git*' formats "%F{15}[%{$fg[green]%}%b%F{15}]%{$reset_color%}%m%u% "
 zstyle ':vcs_info:git*' actionformats "[%b] (%a) %m%u%c "
 
 precmd() {
