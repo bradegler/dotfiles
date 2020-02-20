@@ -57,8 +57,8 @@ zstyle ':vcs_info:*' check-for-changes true
 #zstyle ':vcs_info:git:*' formats '%F{129}(%b)%f'
 #zstyle ':vcs_info:git*' actionformats '%b (%a)'
 
-zstyle ':vcs_info:*' stagedstr '%{%F{cyan}%B%}Ø%{%b%f%}'
-zstyle ':vcs_info:*' unstagedstr '%{%F{yellow}%B%}µ%{%b%f%}'
+zstyle ':vcs_info:*' stagedstr ' %{%F{cyan}%B%}Ø%{%b%f%}'
+zstyle ':vcs_info:*' unstagedstr ' %{%F{yellow}%B%}µ%{%b%f%}'
 zstyle ':vcs_info:git*' formats "%F{15}[%{$fg[green]%}%b%F{15}]%{$reset_color%}%m%u% "
 zstyle ':vcs_info:git*' actionformats "[%b] (%a) %m%u%c "
 

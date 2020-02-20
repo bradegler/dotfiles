@@ -189,3 +189,6 @@ alias fns='fn start -d'
 alias fnd='fn --verbose deploy --all --local'
 alias fnll='fn get logs cet-jira $(fn list calls cet-jira | head  -1 | cut -d" " -f2)'
 alias fnui='docker run -d --rm --link fnserver:api --name fnui -p 4000:4000 -e "FN_API_URL=http://api:8080" fnproject/ui'
+
+# West / Zephyr
+alias we=west
