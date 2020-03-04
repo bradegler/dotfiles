@@ -24,6 +24,33 @@ call plug#end()
 packloadall
 silent! helptags ALL
 
+let g:startify_custom_header = [
+            \'__________.__        __            __    __',
+            \'\______   \__| ____ |  | _______ _/  |__/  |_  ____',
+            \' |     ___/  |/ ___\|  |/ /\__  \\   __\   __\/  _ \',
+            \' |    |   |  \  \___|    <  / __ \|  |  |  | (  <_> )',
+            \' |____|   |__|\___  >__|_ \(____  /__|  |__|  \____/',
+            \'                  \/     \/     \/',
+            \ ]
+
+let g:startify_custom_header = [
+            \'__________                    .___ ___________       .__',
+            \'\______   \____________     __| _/ \_   _____/  ____ |  |   ___________',
+            \' |    |  _/\_  __ \__  \   / __ |   |    __)_  / ___\|  | _/ __ \_  __ \',
+            \' |    |   \ |  | \// __ \_/ /_/ |   |        \/ /_/  >  |_\  ___/|  | \/',
+            \' |______  / |__|  (____  /\____ |  /_______  /\___  /|____/\___  >__|',
+            \'        \/             \/      \/          \//_____/           \/',
+            \ ]
+
+let g:startify_custom_header = [
+            \'___________                    .__.__',
+            \'\_   _____/____    ____ _____  |__|  |',
+            \' |    __) \__  \  /    \\__  \ |  |  |',
+            \' |     \   / __ \|   |  \/ __ \|  |  |__',
+            \' \___  /  (____  /___|  (____  /__|____/',
+            \'     \/        \/     \/     \/',
+            \ ]
+
 " Basic Settings
 set background=dark
 colorscheme hybrid_material
@@ -124,6 +151,7 @@ nnoremap <leader>es :vsp
 " Manage vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " Keep search in the middle of the screen
 nnoremap n nzzzv
 nnoremap N Nzzzv
