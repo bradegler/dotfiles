@@ -12,7 +12,7 @@ bkp_dir=.backup.dotfiles
 dot_dir=$WHERE/.dotfiles
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 
