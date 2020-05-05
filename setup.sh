@@ -38,3 +38,5 @@ do
     fi
 
 done
+
+vim +'PlugInstall --sync' +qa
