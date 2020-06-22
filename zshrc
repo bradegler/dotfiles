@@ -204,4 +204,6 @@ autoload -U promptinit; promptinit
 
 prompt_spaceship_setup
 
+source /etc/bash_completion.d/hgd
+
 RPS1='$(kube_ps1)'
