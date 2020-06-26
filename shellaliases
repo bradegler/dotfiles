@@ -192,6 +192,6 @@ alias fnui='docker run -d --rm --link fnserver:api --name fnui -p 4000:4000 -e "
 
 # West / Zephyr
 alias we=west
-alias bzl=bazel
+alias bzl='nocorrect bazel'
 
 alias vz='vi ~/.zshrc'

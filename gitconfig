@@ -109,3 +109,4 @@
 	process = git-lfs filter-process
 	required = true
 [filter "stripuser"]
+[http]
