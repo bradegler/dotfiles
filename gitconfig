@@ -1,12 +1,8 @@
 [user]
-	name = Brad Egler
-	email = begler@gmail.com
 [color]
-	ui = auto
 	diff = auto
 	status = auto
 [color "diff"]
-	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
@@ -26,7 +22,6 @@
 	insteadOf = git://github.com/
 
 [apply]
-	whitespace = nowarn
 
 [alias]
 	#	Help				====
@@ -101,20 +96,17 @@
     rau         =           remote add upstream
 
 [merge]
-	tool = diffmerge
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
 [mergetool]
 	keepBackup = false
 [diff]
-	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
 [credential]
 	helper = cache
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[filter "stripuser"]
+[http]

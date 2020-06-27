@@ -2,7 +2,6 @@
 
 PATH=".:$PATH"
 PATH="$HOME/.dotfiles/scripts:$PATH"
-PATH="$HOME/.cargo/b/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 
 export PATH
