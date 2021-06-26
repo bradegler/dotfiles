@@ -1,4 +1,6 @@
 [user]
+	name = Brad Egler
+	email = begler@gmail.com
 [color]
 	diff = auto
 	status = auto
@@ -58,20 +60,20 @@
 	#	Pull				====
 	pl			=			pull
 	plo			=			pull --rebase origin
-	plom		=			pull --rebase origin master
+	plom		=			pull --rebase origin main
 	plog		=			pull --rebase origin gh-pages
 	plu			=			pull --rebase upstream
-	plum		=			pull --rebase upstream master
+	plum		=			pull --rebase upstream main
 	plug		=			pull --rebase upstream gh-pages
 	#	Push				====
 	ps			=			push
 	pso			=			push origin
-	psom		=			push origin master
+	psom		=			push origin main
 	psog		=			push origin gh-pages
 	psu			=			push upstream
-	psum		=			push upstream master
+	psum		=			push upstream main
 	psug		=			push upstream gh-pages
-	psuom		=			push -u origin master
+	psuom		=			push -u origin main
 	#	Logs				====
 	l			=			log --pretty=oneline --decorate --abbrev-commit --max-count=15
 	ll			=			log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -110,3 +112,5 @@
 	required = true
 [filter "stripuser"]
 [http]
+[init]
+	defaultBranch = main

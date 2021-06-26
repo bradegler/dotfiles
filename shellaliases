@@ -171,6 +171,7 @@ alias rn='react-native'
 alias m='make'
 alias f='flutter'
 alias sls='serverless'
+alias fl='bundle exec fastlane'
 
 alias a='ansible'
 alias ku='kubectl'
