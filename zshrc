@@ -7,7 +7,7 @@ plugins=(
     git
     kube-ps1
     docker
-    osx
+    macos
     dotenv
     colored-man-pages
     colorize
@@ -206,4 +206,4 @@ prompt_spaceship_setup
 
 [ -f /etc/bash_completion.d/hgd ] && source /etc/bash_completion.d/hgd
 
-RPS1='$(kube_ps1)'
+#RPS1='$(kube_ps1)'

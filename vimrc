@@ -6,6 +6,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 " Just because...
 Plug 'mhinz/vim-startify'
 " Colors
