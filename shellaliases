@@ -74,6 +74,7 @@ alias cujs='cu -H "Accept: application/json" -H "Content-Type: application/json"
 alias cujsa='cujs -H "Authorization: $JWT"'
 alias cuxml='cui -H "Accept: text/xml" -H "Content-Type: text/xml"'
 alias cujsLocalOrigin='cujs -H "Origin: http://localhost"'
+alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
 
 #################################
 # docker

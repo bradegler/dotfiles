@@ -207,3 +207,9 @@ prompt_spaceship_setup
 [ -f /etc/bash_completion.d/hgd ] && source /etc/bash_completion.d/hgd
 
 #RPS1='$(kube_ps1)'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/bradegler/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bradegler/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/bradegler/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bradegler/google-cloud-sdk/completion.zsh.inc'; fi

@@ -166,6 +166,9 @@ nnoremap <silent> <leader>h :set hlsearch!<CR>
 " Repeat on next line
 nnoremap <leader>. j0.
 
+" Execute python with F5
+nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
+
 " Autocmds
 
 augroup vim
