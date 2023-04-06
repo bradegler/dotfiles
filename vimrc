@@ -15,7 +15,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'tpope/vim-haml'
 Plug 'plasticboy/vim-markdown'
 Plug 'martintreurnicht/vim-gradle'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'leafgarland/typescript-vim'
 " Linting
@@ -25,14 +25,9 @@ call plug#end()
 packloadall
 silent! helptags ALL
 
-let g:startify_custom_header = [
-            \'__________.__        __            __    __',
-            \'\______   \__| ____ |  | _______ _/  |__/  |_  ____',
-            \' |     ___/  |/ ___\|  |/ /\__  \\   __\   __\/  _ \',
-            \' |    |   |  \  \___|    <  / __ \|  |  |  | (  <_> )',
-            \' |____|   |__|\___  >__|_ \(____  /__|  |__|  \____/',
-            \'                  \/     \/     \/',
-            \ ]
+" Configure vim-go to use gofumpt
+let g:go_fmt_command="gopls"
+let g:go_gopls_gofumpt=1
 
 let g:startify_custom_header = [
             \'__________                    .___ ___________       .__',
@@ -43,14 +38,6 @@ let g:startify_custom_header = [
             \'        \/             \/      \/          \//_____/           \/',
             \ ]
 
-let g:startify_custom_header = [
-            \'___________                    .__.__',
-            \'\_   _____/____    ____ _____  |__|  |',
-            \' |    __) \__  \  /    \\__  \ |  |  |',
-            \' |     \   / __ \|   |  \/ __ \|  |  |__',
-            \' \___  /  (____  /___|  (____  /__|____/',
-            \'     \/        \/     \/     \/',
-            \ ]
 
 " Basic Settings
 set background=dark
@@ -169,6 +156,9 @@ nnoremap <leader>. j0.
 " Execute python with F5
 nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
 
+" Change working directory to the directory of the currently opened file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
 " Autocmds
 
 augroup vim
@@ -191,6 +181,8 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+set novisualbell
 
 "call NERDTreeHighlightFile('dart', 'green', 'none', 'green', '#151515')
 "call NERDTreeHighlightFile('java', 'yellow', 'none', 'yellow', '#151515')

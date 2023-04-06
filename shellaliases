@@ -31,7 +31,7 @@ alias _="sudo"
 
 #################################
 # git
-alias g='git'
+alias g='nocorrect git'
 alias gra='for file in `g st | cut -d" " -f3`; do g co -- $file; done;'
 # snv
 alias sra='for file in `svn status | cut -d" " -f8`; do rm -rf $file; done;'
@@ -101,20 +101,20 @@ alias dki="docker run -i -t -P $docker_dns"
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q);}
 # Remove all containers
-drma() { docker rm $(docker ps -a -q); }
+#drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 # Delete all dangling images
 alias drmd='docker rmi $(docker images -f "dangling=true" -q)'
 # Delete all dangling volumes
-drmv() { docker volume rm $(docker volume ls -qf dangling=true); }
+#drmv() { docker volume rm $(docker volume ls -qf dangling=true); }
 # Remove all images
-dri() { docker rmi $(docker images -q); }
+#dri() { docker rmi $(docker images -q); }
 # Dockerfile build, e.g., $dbu tcnksm/test 
-dbu() { docker build -t=$1 .; }
+#dbu() { docker build -t=$1 .; }
 # Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;}
-dex() { docker exec -it $1 /bin/bash; }
+#dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;}
+#dex() { docker exec -it $1 /bin/bash; }
 
 
 # docker machine
@@ -179,7 +179,6 @@ alias ku='kubectl'
 alias kush='kubectl run -it --rm --restart=Never busybox --image=busybox sh'
 alias kn='kubens'
 alias kc='kubectx'
-alias ko='kompose'
 alias he='helm'
 alias mk='minikube'
 alias tf='terraform'
@@ -194,6 +193,7 @@ alias fnui='docker run -d --rm --link fnserver:api --name fnui -p 4000:4000 -e "
 
 # West / Zephyr
 alias we=west
-alias bzl='nocorrect bazel'
+alias bzl='nocorrect bazelisk'
+#alias bzl='nocorrect bazel'
 
 alias vz='vi ~/.zshrc'
