@@ -1,41 +1,112 @@
-[user]
-	name = Brad Egler
-	email = begler@gmail.com
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+	editor = $EDITOR
+    excludesFile = ~/.gitignore
+    trustctime = false
+	autocrlf = false
+    pager = less -R
+
+[apply]
+  whitespace = fix
+
+[branch]
+    autosetuprebase = always
+
 [color]
     ui = true
-    branch = true
-    interactive = true
 	diff = true
 	status = true
+    branch = true
+    interactive = true
+
 [color "diff"]
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
 [color "status"]
 	added	 = cyan bold
 	branch	= cyan bold
 	changed   = magenta bold
 	deleted   = red bold
 	untracked = yellow bold	
+
+[fetch]
+    parallel = 7
+    prune = true
+    pruneTags = true
+
+[format]
+#    pretty = ...
+
+[help]
+    autoCorrect = 5
+
+[init]
+    defaultBranch = main
+
 [pull]
     rebase = merges
     default = current
+
 [push]
+    autoSetupRemote = true
 	default = current
-[core]
-	editor = vim
-	autocrlf = false
-    pager = less -R
-[url "https://github.com/"]
-	insteadOf = git://github.com/
+    negotiate = true
 
-[apply]
-    whitespace = fix
-
-[branch]
-    autosetuprebase = always
 [tag]
   gpgsign = true
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[pager]
+	branch = true
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+
+[mailmap]
+    file = ~/.gitmailmap
+
+[merge]
+[mergetool "diffmerge"]
+[mergetool]
+	keepBackup = false
+[diff]
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[filter "nbstripout"]
+	clean = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout
+	smudge = cat
+
+[credential]
+	helper = cache
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+
+[diff "ipynb"]
+	textconv = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout -t
+
+
+
+
 
 [alias]
 	#	Help				====
@@ -55,7 +126,7 @@
     c           =           commit
 	cm			=			commit -m
 	ca			=			commit --amend -m
-    cr          =           commit --amend --reuse-message HEAD
+    cr          =           commit --amend --no-edit
     #   Remote Origin       ====
     ro          =           remote add origin
 	#	Checkout			====
@@ -123,37 +194,3 @@
     rao         =           remote add origin
     rau         =           remote add upstream
 
-[merge]
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-[mergetool]
-	keepBackup = false
-[diff]
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
-[credential]
-	helper = cache
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-[filter "stripuser"]
-[http]
-[init]
-	defaultBranch = main
-[credential "https://source.developers.google.com"]
-	helper = gcloud.sh
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
-[gpg]
-	format = ssh
-[filter "nbstripout"]
-	clean = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout
-	smudge = cat
-[diff "ipynb"]
-	textconv = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout -t
-[pager]
-	branch = true
