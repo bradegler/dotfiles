@@ -1,21 +1,16 @@
 call plug#begin('~/.vim/plugged')
 " Utility Plugins
 Plug 'scrooloose/nerdtree'
-"Plug 'vim-syntastic/syntastic'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'cespare/vim-toml', { 'branch': 'main' }
 " Just because...
 Plug 'mhinz/vim-startify'
 " Colors
 Plug 'kristijanhusak/vim-hybrid-material'
 " Syntax
-Plug 'tpope/vim-haml'
 Plug 'plasticboy/vim-markdown'
-Plug 'martintreurnicht/vim-gradle'
-" Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'leafgarland/typescript-vim'
 " Linting
@@ -64,7 +59,6 @@ set ffs=unix,dos
 set splitbelow splitright
 
 " Status Line
-
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -183,16 +177,3 @@ endfunction
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set novisualbell
-
-"call NERDTreeHighlightFile('dart', 'green', 'none', 'green', '#151515')
-"call NERDTreeHighlightFile('java', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-"call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('sass', 'cyan', 'none', 'cyan', '#151515')
-"call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-"call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-"call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
