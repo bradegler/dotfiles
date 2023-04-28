@@ -26,6 +26,7 @@ alias py='python'
 alias mh='mv $1 .'
 alias setpy='source /Users/begler/opt/environments/37/bin/activate'
 alias op='cd ~/opt'
+alias p='python'
 
 alias _="sudo"
 

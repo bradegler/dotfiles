@@ -103,12 +103,14 @@ let mapleader = ","
 " Exit insert
 inoremap jk     <esc>
 " Quick save
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w<cr>
 " Quick save quit
-nnoremap <leader>q :wq<CR>
+nnoremap <leader>z :wq<cr>
+" Quick quit
+nnoremap <leader>q :q!<cr>
 
 " Toggle nerd tree
-nnoremap <leader>ne :NERDTreeToggle<CR>
+nnoremap <leader>ne :NERDTreeToggle<cr>
 " Change to use Blackhole registers
 nnoremap x "_x
 nnoremap X "_X
@@ -156,6 +158,10 @@ nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
 " Change working directory to the directory of the currently opened file
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
+" Tab/Shift Tab in command mode rotate through open buffers
+nnoremap <tab> :bnext<CR>
+nnoremap <S-tab> :bprevious<CR>
+
 " Autocmds
 
 augroup vim
@@ -180,3 +186,17 @@ endfunction
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set novisualbell
+"set novisualbell
+
+"call NERDTreeHighlightFile('dart', 'green', 'none', 'green', '#151515')
+"call NERDTreeHighlightFile('java', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+"call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('sass', 'cyan', 'none', 'cyan', '#151515')
+"call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+"call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+"call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
