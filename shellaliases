@@ -150,7 +150,6 @@ alias gub='gulp build'
 
 #################################
 # Gradle Aliases
-alias gr='gradle'
 alias gw='gradlew'
 
 ################################
@@ -198,3 +197,5 @@ alias bzl='nocorrect bazelisk'
 #alias bzl='nocorrect bazel'
 
 alias vz='vi ~/.zshrc'
+
+alias gr='cd $(git rev-parse --show-toplevel)'

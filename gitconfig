@@ -87,7 +87,7 @@
 	required = true
 
 [filter "nbstripout"]
-	clean = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout
+	clean = \"/Users/bradegler/.pyenv/versions/3.10.12/bin/python3\" -m nbstripout
 	smudge = cat
 
 [credential]
@@ -102,7 +102,7 @@
 	helper = !/usr/local/bin/gh auth git-credential
 
 [diff "ipynb"]
-	textconv = \"/Users/bradegler/.pyenv/versions/3.11.2/bin/python3\" -m nbstripout -t
+	textconv = \"/Users/bradegler/.pyenv/versions/3.10.12/bin/python3\" -m nbstripout -t
 
 
 
@@ -176,7 +176,7 @@
 	lo			=			log --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'
     up          =           "!f() { git fetch --all; git pull origin HEAD; for upstream in $(git remote); do git remote prune "${upstream}"; done }; f"
     graph       =           "!f() { git log --oneline --abbrev-commit --graph --decorate; }; f"
-    amend       =           !git commit --amend --no-edit
+    amend       =           !git add . && git commit --amend --no-edit
 
 	#	Sync				====
 	sync		=			plu && pso
