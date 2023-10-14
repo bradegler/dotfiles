@@ -26,6 +26,8 @@ files=(
     "bash_profile" 
     "bashrc" 
     "gitconfig" 
+    "gitignore" 
+    "gitmailmap" 
     "profile" 
     "vimrc" 
     "shellpaths" 

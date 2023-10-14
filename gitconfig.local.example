@@ -1,0 +1,5 @@
+# ~/.gitconfig.local
+[user]
+	name = Brad Egler
+	email = begler@gmail.com
+	signingkey = <signing key>
